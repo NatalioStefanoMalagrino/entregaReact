@@ -2,7 +2,6 @@ import { useState } from "react";
 import { useEffect } from "react";
 import {products} from "../../productsMock"
 import ItemList from "../ItemList/ItemList";
-import "./ItemListContainer.css"
 import {useParams} from "react-router-dom"
 
 const ItemListContainer = () => {
@@ -14,11 +13,11 @@ const ItemListContainer = () => {
 
   useEffect( ()=>{
 
-    const productsFiltered = products.filter
+    const productsFiltered = products.filter ( (product)=> product.category === categoryName )
 
     const task = new Promise((resolve, reject) => {
       setTimeout(()=>{
-        resolve(products)
+        resolve( categoryName ? productsFiltered : products )
       }, 500);
       //reject("error que diga algo");
     });
@@ -30,7 +29,7 @@ const ItemListContainer = () => {
       .catch((error) => {
         console.log("aca se rechazo", error);
       });
-  }, [])
+  }, [categoryName])
 
   return (
     <>

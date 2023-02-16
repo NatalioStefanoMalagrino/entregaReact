@@ -5,7 +5,7 @@ export const products = [
         price: 1700,
         stock: 10,
         description: "Doble carne de 120 gramos, queso cheddar, lechuga, tomate, cebolla y thousand island",
-        category: "Hamburguesas",
+        category: "hamburguesas",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676473016/hamburguesa-irvine-3jpg_jzbfwm.jpg"
     },
 
@@ -15,7 +15,7 @@ export const products = [
         price: 1500,
         stock: 10,
         description: "Doble carne de 120 gramos, doble queso cheddar, cebolla ketchup y mostaza",
-        category: "Hamburguesas",
+        category: "hamburguesas",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676473227/418-4184862_hamburguesa-doble-con-queso_x0gk8y.jpg"
     },
 
@@ -25,7 +25,7 @@ export const products = [
         price: 1800,
         stock: 10,
         description: "Doble carne de 120 gramos, queso cheddar, doble bacon, tomate y thousand island",
-        category: "Hamburguesas",
+        category: "hamburguesas",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676473341/the_king_bacon_jsdyah.jpg"
     },
 
@@ -35,7 +35,7 @@ export const products = [
         price: 1850,
         stock: 10,
         description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
-        category: "Hamburguesas",
+        category: "hamburguesas",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676473454/Guacamole_xdaccy.webp"
     },
 
@@ -45,7 +45,7 @@ export const products = [
         price: 350,
         stock: 10,
         description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
-        category: "Acompañamientos",
+        category: "acompañamientos",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566449/images_u309zr.jpg"
     },
 
@@ -55,7 +55,7 @@ export const products = [
         price: 450,
         stock: 10,
         description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
-        category: "Acompañamientos",
+        category: "acompañamientos",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566489/aros-de-cebolla-fritos_vvwmze.jpg"
     },
 
@@ -65,7 +65,7 @@ export const products = [
         price: 300,
         stock: 10,
         description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
-        category: "Bebidas",
+        category: "bebidas",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566515/320px-15-09-26-RalfR-WLC-0098_-_Coca-Cola_glass_bottle__28Germany_29_lknaro.jpg"
     },
 
@@ -75,7 +75,7 @@ export const products = [
         price: 200,
         stock: 10,
         description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
-        category: "Bebidas",
+        category: "bebidas",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566551/7790315000446_02_mw4u9c.jpg"
     },
 ]

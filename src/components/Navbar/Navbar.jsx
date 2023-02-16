@@ -9,19 +9,19 @@ const Navbar = () => {
       </Link>
       <h1 style={{color: "rgb(219, 198, 10)"}}>VALENTINE BURGERS</h1>
       <ul style={{ display: "flex", listStyle: "none", textDecoration: "none" }}>
-        <Link to="/category/hamburguesas" style={{textDecoration: "none"}}>   
+        <Link to="/category/1" style={{textDecoration: "none"}}>   
           <li style={{ padding: "15px" }}>
-            <span style={{color: "white", fontWeight: "bold"}} title="Hamburguesas">HAMBURGUESAS</span>
+            <span style={{color: "white", fontWeight: "bold"}}>HAMBURGUESAS</span>
           </li>
         </Link>
-        <Link to="/category/acompañamientos" style={{textDecoration: "none"}}>        
+        <Link to="/category/2" style={{textDecoration: "none"}}>        
           <li style={{ padding: "15px" }}>
-            <span style={{color: "white", fontWeight: "bold"}} title="Acompañamientos">ACOMPAÑAMIENTOS</span>
+            <span style={{color: "white", fontWeight: "bold"}}>ACOMPAÑAMIENTOS</span>
           </li>
         </Link>
-        <Link to="/category/bebidas" style={{textDecoration: "none"}}>
+        <Link to="/category/3" style={{textDecoration: "none"}}>
           <li style={{ padding: "15px" }}>
-            <span style={{color: "white", fontWeight: "bold"}} title="Bebidas">BEBIDAS</span>
+            <span style={{color: "white", fontWeight: "bold"}}>BEBIDAS</span>
           </li>     
         </Link>
       </ul>

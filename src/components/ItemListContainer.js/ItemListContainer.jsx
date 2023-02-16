@@ -6,18 +6,18 @@ import {useParams} from "react-router-dom"
 
 const ItemListContainer = () => {
 
-  const {categoryName} = useParams()
-  console.log("asi llega a categoryName: ",categoryName)
+  const {id} = useParams()
+  console.log("asi llega a categoryId: ",id)
 
   const [items, setItems] = useState([])
 
   useEffect( ()=>{
 
-    const productsFiltered = products.filter ( (product)=> product.category === categoryName )
+    const productsFiltered = products.filter ( (product)=> product.category === id )
 
     const task = new Promise((resolve, reject) => {
       setTimeout(()=>{
-        resolve( categoryName ? productsFiltered : products )
+        resolve( id ? productsFiltered : products )
       }, 500);
       //reject("error que diga algo");
     });
@@ -29,7 +29,7 @@ const ItemListContainer = () => {
       .catch((error) => {
         console.log("aca se rechazo", error);
       });
-  }, [categoryName])
+  }, [id])
 
   return (
     <>

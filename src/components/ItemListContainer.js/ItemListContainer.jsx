@@ -3,12 +3,19 @@ import { useEffect } from "react";
 import {products} from "../../productsMock"
 import ItemList from "../ItemList/ItemList";
 import "./ItemListContainer.css"
+import {useParams} from "react-router-dom"
 
 const ItemListContainer = () => {
 
-const [items, setItems] = useState([])
+  const {categoryName} = useParams()
+  console.log("asi llega a categoryName: ",categoryName)
+
+  const [items, setItems] = useState([])
 
   useEffect( ()=>{
+
+    const productsFiltered = products.filter
+
     const task = new Promise((resolve, reject) => {
       setTimeout(()=>{
         resolve(products)
@@ -24,8 +31,6 @@ const [items, setItems] = useState([])
         console.log("aca se rechazo", error);
       });
   }, [])
-
-  console.log( items )
 
   return (
     <>

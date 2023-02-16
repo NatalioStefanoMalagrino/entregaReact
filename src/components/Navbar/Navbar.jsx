@@ -9,15 +9,21 @@ const Navbar = () => {
       </Link>
       <h1 style={{color: "rgb(219, 198, 10)"}}>VALENTINE BURGERS</h1>
       <ul style={{ display: "flex", listStyle: "none" }}>
-        <li style={{ padding: "15px" }}>
-            <a style={{textDecoration: "none", color: "white", fontWeight: "bold"}} href="./index.html">HAMBURGUESAS</a>
-        </li>
-        <li style={{ padding: "15px" }}>
-            <a style={{textDecoration: "none", color: "white", fontWeight: "bold"}} href="./index.html">ACOMPAÑAMIENTOS</a>
-        </li>
-        <li style={{ padding: "15px" }}>
-            <a style={{textDecoration: "none", color: "white", fontWeight: "bold"}} href="./index.html">BEBIDAS</a>
-        </li>
+        <Link to="/category/hamburguesas">
+          <li style={{ padding: "15px" }}>
+            <span style={{textDecoration: "none", color: "white", fontWeight: "bold"}} title="Hamburguesas">HAMBURGUESAS</span>
+          </li>
+        </Link>
+        <Link to="/category/acompañamientos">        
+          <li style={{ padding: "15px" }}>
+            <span style={{textDecoration: "none", color: "white", fontWeight: "bold"}} title="Acompañamientos">ACOMPAÑAMIENTOS</span>
+          </li>
+        </Link>
+        <Link to="/category/bebidas">
+          <li style={{ padding: "15px" }}>
+            <span style={{textDecoration: "none", color: "white", fontWeight: "bold"}} title="Bebidas">BEBIDAS</span>
+          </li>     
+        </Link>
       </ul>
       <CartWidget />
     </div>

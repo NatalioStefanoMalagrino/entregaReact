@@ -1,7 +1,14 @@
 .containerCard{
     border: 5px solid rgb(219, 198, 10);
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 400px;
     margin-bottom: 20px;
     background-color: black;
+    margin-top: 50px;
+}
+
+.h2{
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

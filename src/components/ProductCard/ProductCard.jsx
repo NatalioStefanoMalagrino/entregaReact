@@ -12,7 +12,7 @@ const ProductCard = ({element}) => {
         <img src={element.img} alt="" style={{width:"100%",height:"48%"}} />
         <h2 className="h2">{element.price}</h2>
 
-        <Link to={`/Item/${element.id}`} style={{display: "flex", justifyContent: "center", textDecoration: "none"}}>
+        <Link to={`/item/${element.id}`} style={{display: "flex", justifyContent: "center", textDecoration: "none"}}>
 
           <Button variant="contained" style={{textDecoration: "none"}}>
             Ver mas

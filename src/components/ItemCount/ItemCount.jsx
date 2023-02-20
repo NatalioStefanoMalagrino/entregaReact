@@ -18,9 +18,9 @@ const ItemCount = ({stock, initial, onAdd}) => {
 
   return (
     <div style={{display:"flex", justifyContent:"center"}}>
-        <Button onClick={restar} disabled={contador===0} variant="contained" style={{textDecoration: "none", margin: "20px"}}>Restar</Button>
+        <Button onClick={restar} disabled={contador===0} variant="contained" style={{textDecoration: "none", margin: "20px", borderRadius:"50%"}}>-</Button>
         <h1>{contador}</h1>
-        <Button onClick={sumar} disabled={contador===stock} variant="contained" style={{textDecoration: "none", margin: "20px"}}>Sumar</Button>
+        <Button onClick={sumar} disabled={contador===stock} variant="contained" style={{textDecoration: "none", margin: "20px", borderRadius:"50%"}}>+</Button>
         <Button onClick={ ()=> onAdd(contador)} disabled={contador===0} variant="contained" style={{textDecoration: "none", margin: "20px"}}>Agregar al carrito</Button>
     </div>
   )

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import {useNavigate} from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Form = () => {
   //const [name, setName] = useState("")
@@ -7,7 +7,7 @@ const Form = () => {
   const [userData, setUserData] = useState({ name: "", email: "" });
   const [noVocales, setNoVocales] = useState("");
 
-    const navigate = useNavigate()
+  const navigate = useNavigate();
 
   const cancel = () => {
     console.log("se cancelo el formulario");
@@ -16,17 +16,23 @@ const Form = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
     console.log(userData);
-    navigate("/")
+    navigate("/");
   };
 
   const handleKey = (event) => {
-    if (event.key.toLowerCase() === "a" || event.key.toLowerCase() === "e" || event.key.toLowerCase() === "i" || event.key.toLowerCase() === "o" || event.key.toLowerCase() === "u") {
-        event.preventDefault();
+    if (
+      event.key.toLowerCase() === "a" ||
+      event.key.toLowerCase() === "e" ||
+      event.key.toLowerCase() === "i" ||
+      event.key.toLowerCase() === "o" ||
+      event.key.toLowerCase() === "u"
+    ) {
+      event.preventDefault();
     } else {
     }
   };
 
-  console.log(noVocales)
+  console.log(noVocales);
 
   return (
     <div>

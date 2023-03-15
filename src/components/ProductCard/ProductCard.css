@@ -1,4 +1,4 @@
-.containerCard{
+.containerCard {
     border: 5px solid rgb(219, 198, 10);
     width: 350px;
     height: 400px;
@@ -6,7 +6,7 @@
     background-color: black;
 }
 
-.h2{
+.h2 {
     display: flex;
     justify-content: center;
     align-items: center;

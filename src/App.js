@@ -5,27 +5,32 @@ import FetchingData from "./components/FetchingData/FetchingData";
 import ItemDetailContainer from "./components/ItemDetailContainer/ItemDetailContainer";
 import Cart from "./components/Cart/Cart"
 import {BrowserRouter, Routes, Route} from "react-router-dom"
+import CartContextProvider from "./context/CartContext";
 
 function App() {
   return (
 
     <BrowserRouter>
 
-    <Navbar/>
+    <CartContextProvider>
 
-    <Routes>
+      <Navbar/>
 
-    <Route path="/" element={ <ItemListContainer/>}/>
+      <Routes>
 
-    <Route path="/category/:id" element={ <ItemListContainer/>}/>
+      <Route path="/" element={ <ItemListContainer/>}/>
 
-    <Route path="/item/:id" element={ <ItemDetailContainer/>}/>
+      <Route path="/category/:id" element={ <ItemListContainer/>}/>
 
-    <Route path="/cart" element={ <Cart/>}/>
+      <Route path="/item/:id" element={ <ItemDetailContainer/>}/>
 
-    <Route path="*" element={ <h1>404 Not Found</h1>}/>
+      <Route path="/cart" element={ <Cart/>}/>
 
-    </Routes>
+      <Route path="*" element={ <h1>404 Not Found</h1>}/>
+
+      </Routes>
+
+    </CartContextProvider>
 
     </BrowserRouter>
 

@@ -28,7 +28,7 @@ const FormCheckout = ({ cart, total, clearCart, setOrderId }) => {
       .catch((err) => console.log(err));
 
     cart.map((product) => {
-      updateDoc(doc(db, "products", product.id), {
+      return updateDoc(doc(db, "products", product.id), {
         stock: product.stock - product.quantity,
       });
     });

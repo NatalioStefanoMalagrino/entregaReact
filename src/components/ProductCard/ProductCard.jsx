@@ -18,9 +18,7 @@ const ProductCard = ({ element }) => {
           textDecoration: "none",
         }}
       >
-        <Button variant="contained" style={{ textDecoration: "none" }}>
-          Ver mas
-        </Button>
+        <Button variant="contained">Ver mas</Button>
       </Link>
     </div>
   );

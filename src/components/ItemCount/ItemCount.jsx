@@ -34,7 +34,7 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
         onClick={sumar}
         disabled={contador === stock}
         variant="contained"
-        style={{ textDecoration: "none", margin: "20px", borderRadius: "50%" }}
+        style={{ margin: "20px", borderRadius: "50%" }}
       >
         +
       </Button>

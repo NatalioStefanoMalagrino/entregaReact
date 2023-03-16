@@ -38,7 +38,11 @@ const ItemDetail = ({ product }) => {
       <h1 style={{ display: "flex", justifyContent: "center" }}>
         {product.title}
       </h1>
-      <img src={product.img} style={{ width: "100%", height: "100%" }} />
+      <img
+        src={product.img}
+        style={{ width: "100%", height: "100%" }}
+        alt="img"
+      />
       <h2 style={{ display: "flex", justifyContent: "center" }}>
         {product.description}
       </h2>
@@ -54,10 +58,7 @@ const ItemDetail = ({ product }) => {
           textDecoration: "none",
         }}
       >
-        <Button
-          variant="contained"
-          style={{ textDecoration: "none", marginTop: "40px" }}
-        >
+        <Button variant="contained" style={{ marginTop: "40px" }}>
           Volver atras
         </Button>
       </Link>

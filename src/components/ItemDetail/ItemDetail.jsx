@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
 import { CartContext } from "../../context/CartContext";
 import { useContext } from "react";
+import Swal from "sweetalert2";
 
 const ItemDetail = ({ product }) => {
   const { addToCart, getQuantityById } = useContext(CartContext);
@@ -15,6 +16,11 @@ const ItemDetail = ({ product }) => {
     };
 
     addToCart(obj);
+
+    Swal.fire({
+      icon: "success",
+      title: "Se agrego el producto al carrito",
+    });
   };
 
   const quantity = getQuantityById(product.id);

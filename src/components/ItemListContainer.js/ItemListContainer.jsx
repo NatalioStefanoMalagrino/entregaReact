@@ -4,6 +4,8 @@ import { products } from "../../productsMock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import RingLoader from "react-spinners/ClipLoader";
+import { db } from "../../firebaseConfig";
+import { getDocs, collection, query, where } from "firebase/firestore";
 
 const override = {
   display: "block",
@@ -17,25 +19,54 @@ const ItemListContainer = () => {
   const [items, setItems] = useState([]);
 
   useEffect(() => {
-    const productsFiltered = products.filter(
-      (product) => product.category === id
-    );
+    const itemCollection = collection(db, "products");
 
-    const task = new Promise((resolve, reject) => {
-      setTimeout(() => {
-        resolve(id ? productsFiltered : products);
-      }, 3000);
-      //reject("error que diga algo");
-    });
+    if (id) {
+      const q = query(itemCollection, where("category", "==", id));
 
-    task
-      .then((res) => {
-        setItems(res);
-      })
-      .catch((error) => {
-        console.log("aca se rechazo", error);
-      });
+      getDocs(q)
+        .then((res) => {
+          const products = res.docs.map((product) => {
+            return {
+              ...product.data(),
+              id: product.id,
+            };
+          });
+          setItems(products);
+        })
+        .catch((err) => console.log("error:" + err));
+    } else {
+      getDocs(itemCollection)
+        .then((res) => {
+          const products = res.docs.map((product) => {
+            return {
+              ...product.data(),
+              id: product.id,
+            };
+          });
+          setItems(products);
+        })
+        .catch((err) => console.log("error:" + err));
+    }
+
+    // const productsFiltered = products.filter(
+    //   (product) => product.category === id
+    // );
+    // const task = new Promise((resolve, reject) => {
+    //   setTimeout(() => {
+    //     resolve(id ? productsFiltered : products);
+    //   }, 500);
+    //   //reject("error que diga algo");
+    // });
+    // task
+    //   .then((res) => {
+    //     setItems(res);
+    //   })
+    //   .catch((error) => {
+    //     console.log("aca se rechazo", error);
+    //   });
   }, [id]);
+  console.log(items);
 
   return (
     <div>

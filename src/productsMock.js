@@ -44,7 +44,7 @@ export const products = [
         title: "Papas fritas",
         price: 350,
         stock: 10,
-        description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
+        description: "Sabrosas papas fritas",
         category: "2",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566449/images_u309zr.jpg"
     },
@@ -54,7 +54,7 @@ export const products = [
         title: "Aros de cebolla",
         price: 450,
         stock: 10,
-        description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
+        description: "Sabrosos aros de cebolla",
         category: "2",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566489/aros-de-cebolla-fritos_vvwmze.jpg"
     },
@@ -64,7 +64,7 @@ export const products = [
         title: "Coca cola",
         price: 300,
         stock: 10,
-        description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
+        description: "Refrescante gaseosa",
         category: "3",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566515/320px-15-09-26-RalfR-WLC-0098_-_Coca-Cola_glass_bottle__28Germany_29_lknaro.jpg"
     },
@@ -74,7 +74,7 @@ export const products = [
         title: "Agua mineral",
         price: 200,
         stock: 10,
-        description: "Doble carne de 120 gramos, queso dambo, lechuga y guacamole",
+        description: "Refrescante agua mineral",
         category: "3",
         img: "https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676566551/7790315000446_02_mw4u9c.jpg"
     },

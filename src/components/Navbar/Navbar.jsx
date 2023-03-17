@@ -1,46 +1,32 @@
 import CartWidget from "../CartWidget/CartWidget";
 import { Link } from "react-router-dom";
+import "./Navbar.css";
 
 const Navbar = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        width: "100%",
-        justifyContent: "space-between",
-        alignItems: "center",
-        backgroundColor: "black",
-        color: "white",
-      }}
-    >
+    <div className="navbar">
       <Link to="/">
         <img
           src="https://res.cloudinary.com/dw4yk4pk2/image/upload/v1676572641/logo1_rcp2wd.png"
           alt="logo"
-          style={{ width: "18%", heigth: "18%", marginLeft: "70px" }}
+          className="img"
         />
       </Link>
-      <h1 style={{ color: "rgb(219, 198, 10)" }}>VALENTINE BURGERS</h1>
-      <ul
-        style={{ display: "flex", listStyle: "none", textDecoration: "none" }}
-      >
-        <Link to="/category/1" style={{ textDecoration: "none" }}>
-          <li style={{ padding: "15px" }}>
-            <span style={{ color: "white", fontWeight: "bold" }}>
-              HAMBURGUESAS
-            </span>
+      <h1>VALENTINE BURGERS</h1>
+      <ul className="ul">
+        <Link to="/category/1" className="links">
+          <li className="li">
+            <span className="span">HAMBURGUESAS</span>
           </li>
         </Link>
-        <Link to="/category/2" style={{ textDecoration: "none" }}>
-          <li style={{ padding: "15px" }}>
-            <span style={{ color: "white", fontWeight: "bold" }}>
-              ACOMPAÑAMIENTOS
-            </span>
+        <Link to="/category/2" className="links">
+          <li className="li">
+            <span className="span">ACOMPAÑAMIENTOS</span>
           </li>
         </Link>
-        <Link to="/category/3" style={{ textDecoration: "none" }}>
-          <li style={{ padding: "15px" }}>
-            <span style={{ color: "white", fontWeight: "bold" }}>BEBIDAS</span>
+        <Link to="/category/3" className="links">
+          <li className="li">
+            <span className="span">BEBIDAS</span>
           </li>
         </Link>
       </ul>

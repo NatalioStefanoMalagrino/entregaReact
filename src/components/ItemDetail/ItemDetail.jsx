@@ -2,63 +2,18 @@ import React from "react";
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom";
 import ItemCount from "../ItemCount/ItemCount";
-import { CartContext } from "../../context/CartContext";
-import { useContext } from "react";
-import Swal from "sweetalert2";
+import "./ItemDetail.css";
 
-const ItemDetail = ({ product }) => {
-  const { addToCart, getQuantityById } = useContext(CartContext);
-
-  const onAdd = (cantidad) => {
-    const obj = {
-      ...product,
-      quantity: cantidad,
-    };
-
-    addToCart(obj);
-
-    Swal.fire({
-      icon: "success",
-      title: "Se agrego el producto al carrito",
-    });
-  };
-
-  const quantity = getQuantityById(product.id);
-
+const ItemDetail = ({ product, onAdd, quantity }) => {
   return (
-    <div
-      style={{
-        display: "grid",
-        gridTemplateColumns: "50%",
-        gridTemplateRows: "20%",
-        justifyContent: "center",
-        alingItems: "center",
-      }}
-    >
-      <h1 style={{ display: "flex", justifyContent: "center" }}>
-        {product.title}
-      </h1>
-      <img
-        src={product.img}
-        style={{ width: "100%", height: "100%" }}
-        alt="img"
-      />
-      <h2 style={{ display: "flex", justifyContent: "center" }}>
-        {product.description}
-      </h2>
-      <h2 style={{ display: "flex", justifyContent: "center" }}>
-        {product.price}
-      </h2>
+    <div className="itemDetail">
+      <h1 className="h">{product.title}</h1>
+      <img src={product.img} className="imagen" alt="img" />
+      <h2 className="h">{product.description}</h2>
+      <h2 className="h">{product.price}</h2>
       <ItemCount onAdd={onAdd} stock={product.stock} initial={quantity} />
-      <Link
-        to={`/`}
-        style={{
-          display: "flex",
-          justifyContent: "center",
-          textDecoration: "none",
-        }}
-      >
-        <Button variant="contained" style={{ marginTop: "40px" }}>
+      <Link to={`/`} className="link1">
+        <Button variant="contained" className="button">
           Volver atras
         </Button>
       </Link>

@@ -4,8 +4,8 @@ import { Button } from "@mui/material";
 import Swal from "sweetalert2";
 import { useState } from "react";
 import FormCheckout from "../FormCheckout/FormCheckout";
-import { Link } from "react-router-dom";
 import FinishBuy from "../FinishBuy/FinishBuy";
+import "./Cart.css";
 
 const Cart = () => {
   const { cart, clearCart, deleteProductById, getTotalPrice } =
@@ -13,8 +13,6 @@ const Cart = () => {
 
   const [buy, setBuy] = useState(false);
   const [orderId, setOrderId] = useState("");
-
-  console.log(orderId);
 
   const clearCartAlert = () => {
     Swal.fire({
@@ -24,7 +22,6 @@ const Cart = () => {
       confirmButtonText: "Si, eliminar",
       denyButtonText: `No, no eliminar`,
     }).then((result) => {
-      /* Read more about isConfirmed, isDenied below */
       if (result.isConfirmed) {
         Swal.fire("Carrito eliminado", "", "success");
         clearCart();
@@ -43,13 +40,7 @@ const Cart = () => {
   return (
     <div>
       {!buy ? (
-        <div
-          style={{
-            display: "flex",
-            justifyContent: "space-evenly",
-            padding: "20px",
-          }}
-        >
+        <div className="cart">
           {cart.length < 1 ? (
             <img
               src="https://res.cloudinary.com/dw4yk4pk2/image/upload/v1678894341/undraw_web_search_re_efla_cx9cah.svg"
@@ -59,26 +50,9 @@ const Cart = () => {
             <div>
               {cart.map((item) => {
                 return (
-                  <div
-                    key={item.id}
-                    style={{ display: "flex", justifyContent: "space-evenly" }}
-                  >
-                    <div
-                      style={{
-                        display: "flex",
-                        justifyContent: "space-between",
-                        border: "4px solid black",
-                        alignItems: "center",
-                        width: "1000px",
-                        padding: "20px",
-                        margin: "50px",
-                      }}
-                    >
-                      <img
-                        src={item.img}
-                        alt=""
-                        style={{ width: "70px", height: "70px" }}
-                      />
+                  <div key={item.id} className="map">
+                    <div className="cart2">
+                      <img src={item.img} alt="" className="img" />
                       <h3>precio: {item.price}</h3>
                       <h3>cantidad: {item.quantity}</h3>
                       <Button
@@ -93,17 +67,7 @@ const Cart = () => {
               })}
             </div>
           )}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "space-between",
-              border: "4px solid black",
-              alignItems: "center",
-              width: "1000px",
-              padding: "20px",
-              margin: "50px",
-            }}
-          >
+          <div className="cart2">
             <h3>Precio final: ${total}</h3>
             <Button onClick={() => clearCartAlert()} variant="contained">
               Vaciar carrito

@@ -7,6 +7,7 @@ import {
   doc,
 } from "firebase/firestore";
 import { db } from "../../firebaseConfig";
+import "./FormCheckout.css";
 
 const FormCheckout = ({ cart, total, clearCart, setOrderId }) => {
   const [userInfo, setUserInfo] = useState({ email: "", phone: "" });
@@ -34,26 +35,30 @@ const FormCheckout = ({ cart, total, clearCart, setOrderId }) => {
     });
 
     clearCart();
-
-    console.log(order);
   };
 
   return (
-    <div>
+    <div className="form1">
       <form onSubmit={handleSubmit}>
         <input
           type="placeholder"
           placeholder="Ingrese su email"
           name="email"
           onChange={(e) => setUserInfo({ ...userInfo, email: e.target.value })}
+          className="form"
         />
         <input
           type="placeholder"
           placeholder="Ingrese su numero telefonico"
           name="phone"
           onChange={(e) => setUserInfo({ ...userInfo, phone: e.target.value })}
+          className="form"
         />
-        <button variant="contained">Comprar</button>
+        <div>
+          <button type="submit" variant="contained" className="form">
+            Comprar
+          </button>
+        </div>
       </form>
     </div>
   );

@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { Button } from "@mui/material";
+import "./ItemCount.css";
 
 const ItemCount = ({ stock, initial = 1, onAdd }) => {
   const [contador, setContador] = useState(initial);
@@ -20,7 +21,7 @@ const ItemCount = ({ stock, initial = 1, onAdd }) => {
   };
 
   return (
-    <div style={{ display: "flex", justifyContent: "center" }}>
+    <div className="itemCount">
       <Button
         onClick={restar}
         disabled={contador === 0}

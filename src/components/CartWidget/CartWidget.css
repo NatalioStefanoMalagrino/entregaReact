@@ -1,0 +1,12 @@
+.cartWidget {
+    display: flex;
+    padding-right: 4%;
+    width: 2%;
+    height: 2%;
+    justify-content: center;
+    align-items: center;
+}
+
+.carrito {
+    color: white;
+}

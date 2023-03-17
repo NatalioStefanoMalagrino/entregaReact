@@ -1,19 +1,10 @@
 import React from "react";
 import ProductCard from "../ProductCard/ProductCard";
+import "./ItemList.css";
 
 const ItemList = ({ items }) => {
   return (
-    <div
-      style={{
-        width: "100%",
-        display: "flex",
-        flexWrap: "wrap",
-        justifyContent: "center",
-        alingItems: "center",
-        height: "60vh",
-        color: "white",
-      }}
-    >
+    <div className="itemsMap">
       {items.map((element) => {
         return <ProductCard element={element} key={element.id} />;
       })}

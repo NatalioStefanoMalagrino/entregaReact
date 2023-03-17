@@ -1,21 +1,32 @@
 import React, { useEffect, useState } from "react";
-import { products } from "../../productsMock";
 import { useParams } from "react-router-dom";
 import ItemDetail from "../ItemDetail/ItemDetail";
 import { db } from "../../firebaseConfig";
 import { getDoc, collection, doc } from "firebase/firestore";
+import { CartContext } from "../../context/CartContext";
+import { useContext } from "react";
+import Swal from "sweetalert2";
 
 const ItemDetailContainer = () => {
-  const onAdd = (cantidad) => {
-    if (cantidad > 0) {
-      console.log(`se agregaron al carrito ${cantidad} unidades`);
-    } else {
-      console.log("no hay nada para agregar al carrito");
-    }
-  };
-
+  const { addToCart, getQuantityById } = useContext(CartContext);
   const { id } = useParams();
   const [product, setProduct] = useState({});
+
+  const onAdd = (cantidad) => {
+    const obj = {
+      ...product,
+      quantity: cantidad,
+    };
+
+    addToCart(obj);
+
+    Swal.fire({
+      icon: "success",
+      title: "Se agrego el producto al carrito",
+    });
+  };
+
+  const quantity = getQuantityById(product.id);
 
   useEffect(() => {
     const itemCollection = collection(db, "products");
@@ -31,7 +42,7 @@ const ItemDetailContainer = () => {
       .catch((err) => console.log(err));
   }, [id]);
 
-  return <ItemDetail product={product} onAdd={onAdd} />;
+  return <ItemDetail product={product} onAdd={onAdd} quantity={quantity} />;
 };
 
 export default ItemDetailContainer;

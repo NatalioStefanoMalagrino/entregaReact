@@ -1,6 +1,5 @@
 import { useState } from "react";
 import { useEffect } from "react";
-import { products } from "../../productsMock";
 import ItemList from "../ItemList/ItemList";
 import { useParams } from "react-router-dom";
 import RingLoader from "react-spinners/ClipLoader";
@@ -10,7 +9,8 @@ import { getDocs, collection, query, where } from "firebase/firestore";
 const override = {
   display: "block",
   margin: "0 auto",
-  borderColor: "red",
+  paddingTop: "20%",
+  borderColor: "white",
 };
 
 const ItemListContainer = () => {
@@ -48,25 +48,7 @@ const ItemListContainer = () => {
         })
         .catch((err) => console.log("error:" + err));
     }
-
-    // const productsFiltered = products.filter(
-    //   (product) => product.category === id
-    // );
-    // const task = new Promise((resolve, reject) => {
-    //   setTimeout(() => {
-    //     resolve(id ? productsFiltered : products);
-    //   }, 500);
-    //   //reject("error que diga algo");
-    // });
-    // task
-    //   .then((res) => {
-    //     setItems(res);
-    //   })
-    //   .catch((error) => {
-    //     console.log("aca se rechazo", error);
-    //   });
   }, [id]);
-  console.log(items);
 
   return (
     <div>
